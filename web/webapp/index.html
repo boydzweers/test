@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <title>BRAM - Bewust Rollen en Autorisatie Managen</title>
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.hana.ondemand.com/1.89.0/resources/sap-ui-core.js"
+      data-sap-ui-libs="sap.m,sap.ui.comp"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-xx-bindingSyntax="complex"
+      data-sap-ui-preload="async"
+      data-sap-ui-resourceroots='{
+				"com.alliander.bram"	: "",
+				"nl.barrydam.ui"		: "./lib/bdUi/"
+			}'
+    ></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/fastcss.css" />
+    <link rel="stylesheet" type="text/css" href="css/mijnAanvraag.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        sap.ui.require(
+          ["sap/ui/core/ComponentContainer"],
+          function (ComponentContainer) {
+            sap.ui
+              .component({
+                async: true,
+                name: "com.alliander.bram",
+                id: "bram",
+              })
+              .then(function (yourComponent) {
+                new ComponentContainer({
+                  component: yourComponent,
+                }).placeAt("content");
+              });
+          }
+        );
+      });
+    </script>
+  </head>
+  <body class="sapUiBody bram">
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div id="loader-logo"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div id="content"></div>
+  </body>
+</html>
