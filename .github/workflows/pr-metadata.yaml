@@ -17,4 +17,4 @@ jobs:
           prNumber: ${{ github.event.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
           pathToIndex: web/webapp/index.html
-          FailOnEOCP: true
+          failOnEOCP: true
