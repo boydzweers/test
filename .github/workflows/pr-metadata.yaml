@@ -14,7 +14,7 @@ jobs:
         with:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
-          prNumber: ${{ github.event.number }}
+          issueNumber: ${{ github.event.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
           pathToIndex: web/webapp/index.html
           failOnEOCP: true
