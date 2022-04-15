@@ -1,15 +1,15 @@
-name: PR metadata annotation
+name: UI5 End of Cloud Provisioning Check
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize]
+  schedule:
+    - cron: "*/45 * * * *"
 
 jobs:
-  annotate-pr:
+  check-ui5-eocp:
     runs-on: ubuntu-latest
-    name: Annotates pull request with metadata
+    name: Checks the actual used version of UI5 against the EOCP versions
     steps:
-      - name: Annotate PR
+      - name: Checks the actual used version of UI5 against the EOCP versions
         uses: boydzweers/UI5-eocp-check@main
         with:
           owner: ${{ github.repository_owner }}
