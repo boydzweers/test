@@ -2,7 +2,7 @@ name: UI5 End of Cloud Provisioning Check
 
 on:
   schedule:
-    - cron: "*/45 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   check-ui5-eocp:
